@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+</head>
+<body>
+    <!--lesson -02-10-->
+    <div id="app">
+       <div v-if="showSeries">
+
+        <p>{{title}} - {{director}} - {{age}}</p>
+
+       </div>
+
+       <button @click="toogleShowSeries">
+        <span v-if="showSeries">Hide Series</span>
+        <span v-else>Show Series</span>
+        <!-- <span v-if="!showSeries">Show Series</span> -->
+       </button>
+
+       <br>
+       <!-- mouse events-->
+       <div class="box" @mouseover="handleEvent" >mouseover (enter)</div>
+       <div class="box" @mouseleave="handleEvent">mouseleave</div>
+       <div class="box" @dblclick="handleEvent">double Click</div>
+       <div class="box" @mousemove="handleMousemove">position - {{ x }} - {{ y }}</div>
+     
+
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
