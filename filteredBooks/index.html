@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+</head>
+<body>
+    <style>
+        body{
+            background: #eee;
+            max-width: 960px;
+            margin: 20px auto; 
+        }
+        img{
+            width: 194px;
+            height: 259px;
+        }
+        p, h3, ul{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style-type: none;
+            background: #fff;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+        li.fav{
+            background: rgba(241, 187, 68, 0.933);
+            color: white ;
+        }
+      
+
+    </style>
+    <!--lesson -02-1-->
+    <div id="app">
+        <!-- attribute binding -->
+        <!-- <a v-bind:href="url">best website</a>  -->
+    
+      
+
+
+       <div v-if="showSeries">
+        <ul>
+            <li v-for="book in filteredBooks" :class="{ fav: book.isFav }" @dblclick="addtoFav(book)">
+                <img :src="book.img" :alt="">
+                <h3>{{ book.title }}</h3>
+                <p> {{ book.author }}</p>
+            </li>
+        </ul>
+
+       </div>
+
+       <button @click="toogleShowSeries">
+        <span v-if="showSeries">Hide Books</span>
+        <span v-else>Show Books</span>
+       
+       </button>
+
+
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
