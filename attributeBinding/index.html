@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+</head>
+<body>
+    <style>
+        img{
+            width: 194px;
+            height: 259px;
+        }
+    </style>
+    <!--lesson -02-13-->
+    <div id="app">
+        <!-- attribute binding -->
+        <a v-bind:href="url">best website</a> 
+        <!-- <a :href="url">best website</a> -->
+      
+
+
+       <div v-if="showSeries">
+        <ul>
+            <li v-for="book in books">
+                <img :src="book.img" :alt="">
+                <h3>{{ book.title }}</h3>
+                <p> {{ book.author }}</p>
+            </li>
+        </ul>
+
+       </div>
+
+       <button @click="toogleShowSeries">
+        <span v-if="showSeries">Hide Series</span>
+        <span v-else>Show Series</span>
+       
+       </button>
+
+
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
